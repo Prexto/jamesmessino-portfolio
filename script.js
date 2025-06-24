@@ -51,24 +51,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. Active Nav Link on Scroll ---
-    const sections = document.querySelectorAll('main section[id]');
-    const headerHeight = document.getElementById('main-header').offsetHeight;
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 100; // Increased offset
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
+// --- 3. Active Nav Link on Scroll ---
+const sections = document.querySelectorAll('main section[id]');
+const headerHeight = document.getElementById('main-header').offsetHeight;
+const navLinksForActive = document.querySelectorAll('#main-header nav a'); // Usar esta variable para la clase active
+
+window.addEventListener('scroll', () => {
+    let currentSectionId = '';
+    const scrollPosition = window.pageYOffset;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 75; // Ajusta este buffer si es necesario (era 100)
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSectionId = section.getAttribute('id');
+        }
     });
+
+    // Special handling for the last section (Contact) if scrolled to the bottom
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        // Check if the bottom of the viewport is at or past the bottom of the contact section
+        // or if we are very close to the bottom of the page
+        const windowHeight = window.innerHeight;
+        const bodyHeight = document.body.offsetHeight;
+        
+        // If scrolled to the very bottom of the page, and contact is the last section
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) { // 50px buffer from bottom
+             // Check if 'contact' is indeed the last section iterated
+            if (sections[sections.length - 1].getAttribute('id') === 'contact') {
+                 currentSectionId = 'contact';
+            }
+        }
+    }
+
+
+    navLinksForActive.forEach(link => {
+        link.classList.remove('active');
+        // Extraer el ID del href (ej: "#contact" -> "contact")
+        const linkHrefId = link.getAttribute('href').substring(1);
+        if (linkHrefId === currentSectionId) {
+            link.classList.add('active');
+        }
+    });
+});
 
     // --- 4. ScrollReveal ---
     if (typeof ScrollReveal !== 'undefined') {
