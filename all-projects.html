@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Projects - James Messino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <div class="container header-container">
+        <a href="index.html" class="logo">James Messino</a>
+        <nav>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="all-projects.html" class="active">All Projects</a></li>
+          </ul>
+        </nav>
+        <button id="mode-toggle" aria-label="Toggle color mode">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun" style="display: none"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="all-projects"
+        class="projects-section"
+        style="padding-top: 120px"
+      >
+        <div class="container">
+          <h2 class="section-title">All Projects</h2>
+          <p class="section-subtitle">
+            A complete collection of my work and experiments across different
+            domains.
+          </p>
+
+          <!-- Project Categories Filter -->
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">
+              All Projects
+            </button>
+            <button class="filter-btn" data-filter="ai-automation">
+              AI & Automation
+            </button>
+            <button class="filter-btn" data-filter="web-development">
+              Web Development
+            </button>
+            <button class="filter-btn" data-filter="mobile-apps">
+              Mobile Apps
+            </button>
+            <button class="filter-btn" data-filter="data-analytics">
+              Data & Analytics
+            </button>
+            <button class="filter-btn" data-filter="game-development">
+              Game Development
+            </button>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Proyecto 1 - AI Agent Platform -->
+            <div class="project-card" data-category="ai-automation">
+              <div class="project-header">
+                <div class="project-image-placeholder">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-badges">
+                  <span class="badge-status live">Live</span>
+                  <span class="badge-type">AI Agent</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>AI Agent Platform</h3>
+                <p>
+                  Comprehensive platform for deploying and managing AI agents
+                  with MCP protocol integration. Features advanced context
+                  management and seamless API connectivity.
+                </p>
+                <div class="project-metrics">
+                  <span class="metric"
+                    ><i class="fas fa-users"></i> 1,200+ interactions</span
+                  >
+                  <span class="metric"
+                    ><i class="fas fa-clock"></i> 0.3s response time</span
+                  >
+                </div>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">AI</span>
+                  <span class="tag">MCP</span>
+                  <span class="tag">API</span>
+                </div>
+                <div class="project-actions">
+                  <button
+                    class="btn-primary"
+                    onclick="openProjectModal('ai-agent-platform')"
+                  >
+                    Try Demo
+                  </button>
+                  <a href="#" class="btn-secondary" target="_blank"
+                    >View Code</a
+                  >
+                  <button
+                    class="btn-tertiary"
+                    onclick="openProjectModal('ai-agent-platform')"
+                  >
+                    Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Proyecto 2 - Analytics Dashboard -->
+            <div class="project-card" data-category="data-analytics">
+              <div class="project-header">
+                <div class="project-image-placeholder">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-badges">
+                  <span class="badge-status live">Live</span>
+                  <span class="badge-type">SaaS</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Analytics Dashboard</h3>
+                <p>
+                  Real-time data visualization platform with advanced analytics
+                  capabilities. Custom-built for high-performance data
+                  processing and interactive reporting.
+                </p>
+                <div class="project-metrics">
+                  <span class="metric"
+                    ><i class="fas fa-database"></i> 50M+ records
+                    processed</span
+                  >
+                  <span class="metric"
+                    ><i class="fas fa-tachometer-alt"></i> 99.9% uptime</span
+                  >
+                </div>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Analytics</span>
+                  <span class="tag">Dashboard</span>
+                </div>
+                <div class="project-actions">
+                  <button
+                    class="btn-primary"
+                    onclick="openProjectModal('analytics-dashboard')"
+                  >
+                    Live Demo
+                  </button>
+                  <a href="#" class="btn-secondary" target="_blank"
+                    >Source Code</a
+                  >
+                  <button
+                    class="btn-tertiary"
+                    onclick="openProjectModal('analytics-dashboard')"
+                  >
+                    Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Proyecto 3 - N8N Automation Suite -->
+            <div class="project-card" data-category="ai-automation">
+              <div class="project-header">
+                <div class="project-image-placeholder">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <div class="project-badges">
+                  <span class="badge-status template">Template</span>
+                  <span class="badge-type">N8N Workflow</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Enterprise Automation Suite</h3>
+                <p>
+                  N8N-based automation toolkit for streamlining complex business
+                  processes. Integrates with 50+ services and provides
+                  intelligent workflow management.
+                </p>
+                <div class="project-metrics">
+                  <span class="metric"
+                    ><i class="fas fa-play"></i> 15+ workflows</span
+                  >
+                  <span class="metric"
+                    ><i class="fas fa-save"></i> 80% time saved</span
+                  >
+                </div>
+                <div class="project-tags">
+                  <span class="tag">N8N</span>
+                  <span class="tag">Automation</span>
+                  <span class="tag">Integration</span>
+                  <span class="tag">Workflow</span>
+                </div>
+                <div class="project-actions">
+                  <button
+                    class="btn-primary"
+                    onclick="openProjectModal('automation-suite')"
+                  >
+                    View Workflow
+                  </button>
+                  <button
+                    class="btn-secondary"
+                    onclick="downloadTemplate('automation-suite')"
+                  >
+                    Download Template
+                  </button>
+                  <button
+                    class="btn-tertiary"
+                    onclick="openProjectModal('automation-suite')"
+                  >
+                    Documentation
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Proyecto 4 - Mobile App -->
+            <div class="project-card" data-category="mobile-apps">
+              <div class="project-header">
+                <div class="project-image-placeholder">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="project-badges">
+                  <span class="badge-status beta">Beta</span>
+                  <span class="badge-type">Mobile App</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>VolunteerConnect App</h3>
+                <p>
+                  Cross-platform mobile application connecting volunteers with
+                  local community projects. Built with Flutter and Firebase
+                  backend for real-time matching.
+                </p>
+                <div class="project-metrics">
+                  <span class="metric"
+                    ><i class="fas fa-download"></i> 2,500+ downloads</span
+                  >
+                  <span class="metric"
+                    ><i class="fas fa-star"></i> 4.8/5 rating</span
+                  >
+                </div>
+                <div class="project-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">Mobile</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+                <div class="project-actions">
+                  <button
+                    class="btn-primary"
+                    onclick="openProjectModal('volunteer-app')"
+                  >
+                    Try Beta
+                  </button>
+                  <a href="#" class="btn-secondary" target="_blank"
+                    >App Store</a
+                  >
+                  <button
+                    class="btn-tertiary"
+                    onclick="openProjectModal('volunteer-app')"
+                  >
+                    Screenshots
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Proyecto 5 - Indie Game -->
+            <div class="project-card" data-category="game-development">
+              <div class="project-header">
+                <div class="project-image-placeholder">
+                  <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-badges">
+                  <span class="badge-status live">Live</span>
+                  <span class="badge-type">Indie Game</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Pixel Quest Adventures</h3>
+                <p>
+                  Retro-style 2D platformer with procedurally generated levels
+                  and unique pixel art style. Built with Godot Engine for
+                  cross-platform compatibility.
+                </p>
+                <div class="project-metrics">
+                  <span class="metric"
+                    ><i class="fas fa-play"></i> 10K+ plays</span
+                  >
+                  <span class="metric"
+                    ><i class="fas fa-trophy"></i> 95% completion rate</span
+                  >
+                </div>
+                <div class="project-tags">
+                  <span class="tag">Godot</span>
+                  <span class="tag">Game Dev</span>
+                  <span class="tag">Pixel Art</span>
+                  <span class="tag">Procedural</span>
+                </div>
+                <div class="project-actions">
+                  <button
+                    class="btn-primary"
+                    onclick="openProjectModal('pixel-quest')"
+                  >
+                    Play Game
+                  </button>
+                  <a href="#" class="btn-secondary" target="_blank"
+                    >Source Code</a
+                  >
+                  <button
+                    class="btn-tertiary"
+                    onclick="openProjectModal('pixel-quest')"
+                  >
+                    Dev Blog
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Proyecto 6 - E-commerce Platform -->
+            <div class="project-card" data-category="web-development">
+              <div class="project-header">
+                <div class="project-image-placeholder">
+                  <i class="fas fa-store"></i>
+                </div>
+                <div class="project-badges">
+                  <span class="badge-status live">Live</span>
+                  <span class="badge-type">E-commerce</span>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>NexCommerce Platform</h3>
+                <p>
+                  Full-featured e-commerce platform with custom CMS, payment
+                  integration, and inventory management. Built on MERN stack
+                  with advanced analytics.
+                </p>
+                <div class="project-metrics">
+                  <span class="metric"
+                    ><i class="fas fa-shopping-cart"></i> 500+
+                    orders/month</span
+                  >
+                  <span class="metric"
+                    ><i class="fas fa-dollar-sign"></i> $50K+ revenue</span
+                  >
+                </div>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">MongoDB</span>
+                  <span class="tag">E-commerce</span>
+                </div>
+                <div class="project-actions">
+                  <button
+                    class="btn-primary"
+                    onclick="openProjectModal('ecommerce-platform')"
+                  >
+                    Live Demo
+                  </button>
+                  <a href="#" class="btn-secondary" target="_blank"
+                    >Source Code</a
+                  >
+                  <button
+                    class="btn-tertiary"
+                    onclick="openProjectModal('ecommerce-platform')"
+                  >
+                    Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeProjectModal()">&times;</span>
+        <div id="modal-project-content">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <footer id="main-footer">
+      <div class="container footer-container">
+        <p>
+          © <span id="current-year"></span> James Messino. All rights reserved.
+        </p>
+        <p class="footer-credit">Designed & Built by James Messino.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+  </body>
+</html>

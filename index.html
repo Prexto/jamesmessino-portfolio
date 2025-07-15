@@ -1,184 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Messino - Developer & AI Systems Architect</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header id="main-header">
-        <div class="container header-container">
-            <a href="#" class="logo">James Messino</a>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="mode-toggle" aria-label="Toggle color mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun" style="display:none;"></i>
-            </button>
-        </div>
+      <div class="container header-container">
+        <a href="index.html" class="logo">James Messino</a>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="all-projects.html">All Projects</a></li>
+          </ul>
+        </nav>
+        <button id="mode-toggle" aria-label="Toggle color mode">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun" style="display: none"></i>
+        </button>
+      </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container hero-content">
-                <h1 class="reveal-hero-text" data-reveal-delay="0">James Messino</h1>
-                <h2 class="reveal-hero-text" data-reveal-delay="200">Developer & AI Systems Architect</h2>
-                <p class="hero-subtitle reveal-hero-text" data-reveal-delay="400">Crafting robust web platforms and intelligent automation.</p>
-                <div class="hero-buttons reveal-hero-text" data-reveal-delay="600">
-                    <a href="cv/James_Messino_CV.pdf" download class="btn btn-primary">Download CV</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
-                </div>
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="container hero-content">
+          <h1 class="reveal-hero-text" data-reveal-delay="0">James Messino</h1>
+          <h2 class="reveal-hero-text" data-reveal-delay="200">
+            Developer & AI Systems Architect
+          </h2>
+          <p class="hero-subtitle reveal-hero-text" data-reveal-delay="400">
+            Crafting robust web platforms and intelligent automation.
+          </p>
+          <div class="hero-buttons reveal-hero-text" data-reveal-delay="600">
+            <a href="cv/James-Messino-Resume.pdf" download class="btn btn-primary"
+              >Download CV</a
+            >
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+          </div>
+        </div>
+      </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container reveal">
-                <div class="about-text-content-full">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Building the future through code and artificial intelligence.</p>
-                    <p>As a 23-year-old Multimedia Engineer from Colombia, with a Minor in Digital Marketing, my journey into advanced technology has been driven by a passion for self-directed learning and hands-on creation. I've honed my expertise as a developer and AI architect primarily through my own technology company initiatives and ambitious personal projects.</p>
-                    <p>My approach combines deep technical knowledge with strategic thinking, focusing on solutions that scale and evolve with emerging technologies. I specialize in creating sophisticated web applications and AI systems that deliver measurable results.</p>
-                    <p>Currently exploring the frontiers of AI integration, including advanced agent systems and Model Context Protocol (MCP) implementations that push the boundaries of what's possible.</p>
-                </div>
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container reveal">
+          <div class="about-text-content-full">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+              Building the future through code and artificial intelligence.
+            </p>
+            <p>
+              As a 23-year-old Multimedia Engineer from Colombia, with a Minor
+              in Digital Marketing, my journey into advanced technology has been
+              driven by a passion for self-directed learning and hands-on
+              creation. I've honed my expertise as a developer and AI architect
+              primarily through my own technology company initiatives and
+              ambitious personal projects.
+            </p>
+            <p>
+              My approach combines deep technical knowledge with strategic
+              thinking, focusing on solutions that scale and evolve with
+              emerging technologies. I specialize in creating sophisticated web
+              applications and AI systems that deliver measurable results.
+            </p>
+            <p>
+              Currently exploring the frontiers of AI integration, including
+              advanced agent systems and Model Context Protocol (MCP)
+              implementations that push the boundaries of what's possible.
+            </p>
+          </div>
 
-                <div class="about-skills-grid-full reveal">
-                    <div class="skill-card">
-                        <i class="fab fa-python skill-icon"></i>
-                        <h3>Python Mastery</h3>
-                        <p>Deep expertise in Python ecosystem for web, data, and AI.</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-laptop-code skill-icon"></i>
-                        <h3>Web Development</h3>
-                        <p>Modern full-stack solutions with a focus on performance.</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-robot skill-icon"></i>
-                        <h3>AI Integration</h3>
-                        <p>Intelligent automation systems and agent development.</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-cogs skill-icon"></i>
-                        <h3>MCP Protocols</h3>
-                        <p>Advanced AI agent frameworks and context management.</p>
-                    </div>
-                </div>
+          <div class="about-skills-grid-full reveal">
+            <div class="skill-card">
+              <i class="fab fa-python skill-icon"></i>
+              <h3>Python Mastery</h3>
+              <p>Deep expertise in Python ecosystem for web, data, and AI.</p>
             </div>
-        </section>
+            <div class="skill-card">
+              <i class="fas fa-laptop-code skill-icon"></i>
+              <h3>Web Development</h3>
+              <p>Modern full-stack solutions with a focus on performance.</p>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-robot skill-icon"></i>
+              <h3>AI Integration</h3>
+              <p>Intelligent automation systems and agent development.</p>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-cogs skill-icon"></i>
+              <h3>MCP Protocols</h3>
+              <p>Advanced AI agent frameworks and context management.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="container reveal">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">A selection of recent work and innovations.</p>
-                <div class="projects-grid">
-                    <!-- Proyecto 1 -->
-                    <div class="project-card reveal">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>AI Agent Platform</h3>
-                            <p>Comprehensive platform for deploying and managing AI agents with MCP protocol integration. Features advanced context management and seamless API connectivity.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span><span class="tag">AI</span><span class="tag">MCP</span><span class="tag">API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
-                                <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Proyecto 2 -->
-                    <div class="project-card reveal">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Analytics Dashboard</h3>
-                            <p>Real-time data visualization platform with advanced analytics capabilities. Custom-built for high-performance data processing and interactive reporting.</p>
-                            <div class="project-tags">
-                                <span class="tag">React</span><span class="tag">Python</span><span class="tag">Analytics</span><span class="tag">Dashboard</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
-                                <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Proyecto 3 -->
-                    <div class="project-card reveal">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Automation Suite</h3>
-                            <p>Enterprise-grade automation toolkit for streamlining complex business processes. Integrates with multiple systems and provides intelligent workflow management.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span><span class="tag">Automation</span><span class="tag">Integration</span><span class="tag">Workflow</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
-                                <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="container reveal">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            A selection of recent work and innovations.
+          </p>
+          <div class="projects-grid">
+            <!-- Proyecto 1 -->
+            <div class="project-card reveal">
+              <div class="project-image-placeholder">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="project-info">
+                <h3>AI Agent Platform</h3>
+                <p>
+                  Comprehensive platform for deploying and managing AI agents
+                  with MCP protocol integration. Features advanced context
+                  management and seamless API connectivity.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span><span class="tag">AI</span
+                  ><span class="tag">MCP</span><span class="tag">API</span>
                 </div>
-                <div class="view-all-projects-container reveal">
-                    <a href="all-projects.html" class="btn btn-primary">View All Projects</a>
-                    <!-- O href="#" si aún no tienes la página -->
+                <div class="project-links">
+                  <a href="#" target="_blank" class="project-link"
+                    ><i class="fas fa-external-link-alt"></i> View Project</a
+                  >
+                  <a href="#" target="_blank" class="project-link"
+                    ><i class="fab fa-github"></i> Source Code</a
+                  >
                 </div>
+              </div>
             </div>
-        </section>
+            <!-- Proyecto 2 -->
+            <div class="project-card reveal">
+              <div class="project-image-placeholder">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="project-info">
+                <h3>Analytics Dashboard</h3>
+                <p>
+                  Real-time data visualization platform with advanced analytics
+                  capabilities. Custom-built for high-performance data
+                  processing and interactive reporting.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Python</span
+                  ><span class="tag">Analytics</span
+                  ><span class="tag">Dashboard</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="project-link"
+                    ><i class="fas fa-external-link-alt"></i> View Project</a
+                  >
+                  <a href="#" target="_blank" class="project-link"
+                    ><i class="fab fa-github"></i> Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Proyecto 3 -->
+            <div class="project-card reveal">
+              <div class="project-image-placeholder">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div class="project-info">
+                <h3>Automation Suite</h3>
+                <p>
+                  Enterprise-grade automation toolkit for streamlining complex
+                  business processes. Integrates with multiple systems and
+                  provides intelligent workflow management.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span
+                  ><span class="tag">Automation</span
+                  ><span class="tag">Integration</span
+                  ><span class="tag">Workflow</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="project-link"
+                    ><i class="fas fa-external-link-alt"></i> View Project</a
+                  >
+                  <a href="#" target="_blank" class="project-link"
+                    ><i class="fab fa-github"></i> Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="view-all-projects-container reveal">
+            <a href="all-projects.html" class="btn btn-primary"
+              >View All Projects</a
+            >
+            <!-- O href="#" si aún no tienes la página -->
+          </div>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container reveal">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">Let's connect and discuss how we can build something great together.</p>
-                <div class="contact-methods">
-                    <a href="mailto:james.messino@yourdomain.com" class="contact-method-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>james.messino@yourdomain.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/jamesmessino-placeholder" target="_blank" class="contact-method-item" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/jamesmessino-placeholder" target="_blank" class="contact-method-item" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://twitter.com/jamesmessino-placeholder" target="_blank" class="contact-method-item" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                        <span>Twitter / X</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="container reveal">
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">
+            Let's connect and discuss how we can build something great together.
+          </p>
+          <div class="contact-methods">
+            <a
+              href="mailto:james.messino@yourdomain.com"
+              class="contact-method-item"
+            >
+              <i class="fas fa-envelope"></i>
+              <span>james.messino@yourdomain.com</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/jamesmessino-placeholder"
+              target="_blank"
+              class="contact-method-item"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/jamesmessino-placeholder"
+              target="_blank"
+              class="contact-method-item"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://twitter.com/jamesmessino-placeholder"
+              target="_blank"
+              class="contact-method-item"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+              <span>Twitter / X</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer id="main-footer">
-        <div class="container footer-container">
-            <p>© <span id="current-year"></span> James Messino. All rights reserved.</p>
-            <p class="footer-credit">Designed & Built by James Messino.</p>
-        </div>
+      <div class="container footer-container">
+        <p>
+          © <span id="current-year"></span> James Messino. All rights reserved.
+        </p>
+        <p class="footer-credit">Designed & Built by James Messino.</p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -117,7 +117,7 @@ body.dark-mode a:hover { color: var(--accent-hover-dark); }
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     border-radius: 8px;
     text-align: center;
@@ -131,44 +131,77 @@ body.dark-mode a:hover { color: var(--accent-hover-dark); }
 
 .btn-primary {
     background-color: var(--accent-light);
-    color: #fff; /* Texto blanco en modo claro */
+    color: #fff;
 }
 body.dark-mode .btn-primary {
     background-color: var(--accent-dark);
-    /* ANTES: color: var(--bg-primary-dark); */
-    color: #fff; /* CAMBIO: Asegurar texto blanco/claro también en modo oscuro para el estado normal */
+    color: #fff;
 }
 .btn-primary:hover {
     background-color: var(--accent-hover-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px var(--shadow-light);
-    color: #fff; /* Mantener texto blanco en hover modo claro */
+    color: #fff;
 }
 body.dark-mode .btn-primary:hover {
     background-color: var(--accent-hover-dark);
     box-shadow: 0 4px 10px var(--shadow-dark);
-    /* ANTES: no había color específico, heredaba var(--bg-primary-dark) */
-    color: #fff; /* AÑADIDO/CAMBIO: Asegurar texto blanco/claro en hover modo oscuro */
-    transform: translateY(-2px); /* Asegurarse que el transform también esté aquí */
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--accent-light);
-    border: 2px solid var(--accent-light);
-}
-body.dark-mode .btn-secondary {
-    color: var(--accent-dark);
-    border-color: var(--accent-dark);
-}
-.btn-secondary:hover {
-    background-color: var(--accent-light);
     color: #fff;
     transform: translateY(-2px);
 }
-body.dark-mode .btn-secondary:hover {
+
+.btn-secondary,
+a.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-light);
+    border: 1px solid var(--accent-light);
+    text-decoration: none;
+}
+body.dark-mode .btn-secondary,
+body.dark-mode a.btn-secondary {
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+.btn-secondary:hover,
+a.btn-secondary:hover {
+    background-color: var(--accent-light);
+    color: #fff;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+body.dark-mode .btn-secondary:hover,
+body.dark-mode a.btn-secondary:hover {
     background-color: var(--accent-dark);
-    color: var(--bg-primary-dark);
+    color: #fff;
+}
+
+.btn-tertiary,
+a.btn-tertiary {
+    background-color: transparent;
+    color: var(--text-secondary-light);
+    border: 1px solid var(--border-light);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+body.dark-mode .btn-tertiary,
+body.dark-mode a.btn-tertiary {
+    color: var(--text-secondary-dark);
+    border-color: var(--border-dark);
+}
+.btn-tertiary:hover,
+a.btn-tertiary:hover {
+    background-color: var(--accent-light);
+    color: #fff;
+    border-color: var(--accent-light);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+body.dark-mode .btn-tertiary:hover,
+body.dark-mode a.btn-tertiary:hover {
+    background-color: var(--accent-dark);
+    color: #fff;
+    border-color: var(--accent-dark);
 }
 
 
@@ -321,6 +354,272 @@ body.dark-mode .hero-subtitle { color: var(--text-secondary-dark); }
 }
 
 
+/* --- Project Filters --- */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: var(--bg-secondary-light);
+    color: var(--text-secondary-light);
+    border: 1px solid var(--border-light);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all var(--transition-speed) var(--transition-ease);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .filter-btn {
+    background-color: var(--bg-secondary-dark);
+    color: var(--text-secondary-dark);
+    border-color: var(--border-dark);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-light);
+    color: #fff;
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 122, 255, 0.3);
+}
+
+body.dark-mode .filter-btn.active {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    box-shadow: 0 4px 8px rgba(10, 132, 255, 0.3);
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-light);
+    color: #fff;
+    border-color: var(--accent-light);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 122, 255, 0.2);
+}
+
+body.dark-mode .filter-btn:hover {
+    background-color: var(--accent-dark);
+    color: #fff;
+    border-color: var(--accent-dark);
+    box-shadow: 0 2px 5px rgba(10, 132, 255, 0.2);
+}
+
+/* --- Project Modal --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: var(--bg-secondary-light);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--border-light);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close {
+    color: var(--text-secondary-light);
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--accent-light);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.modal-title-section h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-primary-light);
+}
+
+.modal-badges {
+    display: flex;
+    gap: 10px;
+}
+
+.badge-status {
+    background-color: var(--accent-light);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.badge-type {
+    background-color: var(--bg-primary-light);
+    color: var(--text-secondary-light);
+    border: 1px solid var(--border-light);
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    color: var(--text-secondary-light);
+    line-height: 1.6;
+}
+
+.metrics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.metric-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-primary-light);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.tech-tag {
+    background-color: var(--bg-primary-light);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+body.dark-mode .modal-actions {
+    border-color: var(--border-dark);
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--bg-secondary-dark);
+    border-color: var(--border-dark);
+}
+
+body.dark-mode .modal-title-section h2 {
+    color: var(--text-primary-dark);
+}
+
+body.dark-mode .modal-body {
+    color: var(--text-secondary-dark);
+}
+
+body.dark-mode .badge-status {
+    background-color: var(--accent-dark);
+}
+
+body.dark-mode .badge-type {
+    background-color: var(--bg-primary-dark);
+    color: var(--text-secondary-dark);
+    border-color: var(--border-dark);
+}
+
+body.dark-mode .metric-item {
+    background-color: var(--bg-primary-dark);
+    border-color: var(--border-dark);
+}
+
+body.dark-mode .tech-tag {
+    background-color: var(--bg-primary-dark);
+    color: var(--text-secondary-dark);
+    border-color: var(--border-dark);
+}
+
+body.dark-mode .close {
+    color: var(--text-secondary-dark);
+}
+
+body.dark-mode .close:hover {
+    color: var(--accent-dark);
+}
+
+/* --- Responsiveness for Modal --- */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+    
+    .project-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-actions .btn-primary,
+    .project-actions .btn-secondary,
+    .project-actions .btn-tertiary {
+        flex: none;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-actions .btn-primary,
+    .modal-actions .btn-secondary,
+    .modal-actions .btn-tertiary {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .project-filters {
+        margin-bottom: 30px;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
 /* --- About Section --- */
 .about-section {
     background-color: var(--bg-secondary-light);
@@ -436,6 +735,7 @@ body.dark-mode .projects-section {
     border: 1px solid var(--border-light);
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 body.dark-mode .project-card {
     background-color: var(--bg-secondary-dark);
@@ -451,6 +751,10 @@ body.dark-mode .project-card:hover {
     box-shadow: 0 8px 25px var(--shadow-dark);
 }
 
+.project-header {
+    position: relative;
+}
+
 .project-image-placeholder {
     height: 200px;
     background-color: var(--accent-light);
@@ -459,6 +763,70 @@ body.dark-mode .project-card:hover {
     justify-content: center;
     color: #fff;
     font-size: 4rem;
+}
+
+.project-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.badge-status {
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-status.live {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.badge-status.beta {
+    background-color: #FF9800;
+    color: white;
+}
+
+.badge-status.template {
+    background-color: #9C27B0;
+    color: white;
+}
+
+body.dark-mode .badge-status.live {
+    background-color: #4CAF50;
+    color: white;
+}
+
+body.dark-mode .badge-status.beta {
+    background-color: #FF9800;
+    color: white;
+}
+
+body.dark-mode .badge-status.template {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.badge-type {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary-light);
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+body.dark-mode .badge-type {
+    background-color: rgba(44, 44, 46, 0.9);
+    color: var(--text-primary-dark);
+    backdrop-filter: blur(10px);
 }
 body.dark-mode .project-image-placeholder {
     background-color: var(--accent-dark);
@@ -511,6 +879,79 @@ body.dark-mode .tag {
     background-color: var(--bg-primary-dark);
     color: var(--text-secondary-dark);
     border-color: var(--border-dark);
+}
+
+.project-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+body.dark-mode .project-metrics {
+    border-color: var(--border-dark);
+}
+
+.project-metrics .metric {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--text-secondary-light);
+    font-weight: 500;
+}
+
+body.dark-mode .project-metrics .metric {
+    color: var(--text-secondary-dark);
+}
+
+.project-metrics .metric i {
+    color: var(--accent-light);
+    font-size: 0.85rem;
+}
+
+body.dark-mode .project-metrics .metric i {
+    color: var(--accent-dark);
+}
+
+.project-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.project-actions .btn-primary,
+.project-actions .btn-secondary,
+.project-actions .btn-tertiary,
+.project-actions a.btn-secondary {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-align: center;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 110px;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.modal-actions .btn-primary,
+.modal-actions .btn-secondary,
+.modal-actions .btn-tertiary,
+.modal-actions a.btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 120px;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .project-links {
